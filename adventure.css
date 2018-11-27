@@ -1,0 +1,59 @@
+body{
+	background-color: black;
+}
+
+#start{
+	display: inline-block;
+	visibility: visible;
+}
+
+#game-container{
+	width: 800px;
+	margin: 0 auto;
+}
+
+#homescreen{
+
+}
+
+#button1{
+    background-color: #A9A9A9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: solid black 2px;
+}
+
+#button2{
+    background-color: #A9A9A9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: solid black 2px;
+}
+
+#button3{
+    background-color: #A9A9A9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: solid black 2px;
+}
