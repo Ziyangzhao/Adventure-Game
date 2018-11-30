@@ -9,10 +9,15 @@ var button1 = document.getElementById('button1');
 var button2 = document.getElementById('button2');
 var button3 = document.getElementById('button3');
 var img = document.createElement("img");
+var p = document.createElement("p");
+p.id = 'text';
+
 
 //Items var
+//var bow = document.createElement
 
-//Lay Out
+
+// Lay Out
 function layOut(){
 	title.innerHTML = "Insert title";
 	img.id = 'layout';
@@ -56,7 +61,6 @@ function layOut(){
 	// button2.addEventListener('click', ***);
 	// button3.addEventListener('click', ***);
 	var text1 = document.createElement("div");
-	var p = document.createElement("p");
 	text1.appendChild(p);
 	document.getElementById('game-container').appendChild(text1);
 	text1.id = 'text1';
@@ -114,7 +118,7 @@ function gameName(){
 	button2.style.position = 'relative';
 	button2.style.top = '325px';
 	button2.style.left = '290px';
-	button1.addEventListener('click', layOut);
+	button1.addEventListener('click', jail);
 	button2.addEventListener('click', instruction);
 	console.log("Adventure Game");
 }
@@ -167,53 +171,82 @@ function instruction(){
 }
 
 //Scene1
-// function jail(){
-// 	console.log("Scene 1 'Jail'");
-// 	newImage.src = "images/jail.jpg";
-// 	title.innerHTML = "Jail";
-// 	title.style.display = 'relative';
-// 	title.style.width = '100%';
-	// title.style.position = 'relative';
-	// title.style.left = '375px';
-	// title.style.top = '70px';
-// 	title.style.color = 'white';
-// 	newImage.style.width = '100%';
-// 	newImage.style.marginTop = '1px';
-// 	button1.style.position = 'relative';
-// 	button1.style.top = '540px';
-// 	button1.style.left = '641px';
-// 	button1.style.display = 'block';
-// 	button1.innerHTML = 'Walk around';
-// 	button1.addEventListener('click', jailTwo)
-// 	button2.style.display = 'none';
-// 	button3.style.display = 'none';
-	// var text1 = document.createElement("div");
-	// var p = document.createElement("p");
-	// text1.appendChild(p);
-	// document.getElementById('game-container').appendChild(text1);
-	// text1.id = 'text1';
-	// text1.style.width = '519px';
-	// text1.style.height = '142px';
-	// p.innerHTML = "You’ve woken up. /n You look around and you don’t remember what’s happened. You are stuck in jail. “I’ve got to find a way out of here.”";
-	// text1.style.backgroundImage =  "url('images/TextBar.png')";
-// }
+function jail(){
+	console.log("Scene 1 'Jail'");
+	layOut();
+	title.innerHTML = "Jail";
+	img.src = "images/jail.jpg";
+	title.style.position = 'relative';
+	title.style.left = '500px';
+	title.style.top = '30px';
+	title.style.color = 'white';
+	p.innerHTML = "You’ve woken up. You look around and you don’t remember what’s happened. You are stuck in jail. “I’ve got to find a way out of here.”";
+	text.style.position = 'relative';
+	text.style.left = '20px';
+	document.getElementById('text').style.position = 'relative';
+	document.getElementById('text').style.top = '15px';
+	document.getElementById('game-buttons').style.position = 'relative';
+	document.getElementById('game-buttons').style.bottom = '2px';
+	button1.innerHTML = 'Look Around';
+	button1.removeEventListener('click', jail);
+	button1.addEventListener('click', jailTwo);
+	button1.style.fontSize = '14px';
+	button2.style.display = 'none';
+	button3.style.display = 'none';
+}
 
-// function jailTwo(){
-// 	console.log("Scene 1a 'Jail'");
-// 	var jail2 = document.createElement("img");
-// 	jail2.src = "images/jail2.jpg";
-// 	var textbar = document.createElement("img");
-// 	textbar.src = "images/TextBar.png"
-// 	button1.style.display = 'none';
-// 	button2.style.display = 'none';
-// 	button3.style.display = 'none';
-// 	title.innerHTML = "Jail";
-// 	title.style.display = 'relative';
-// 	title.style.width = '100%';
-// 	title.style.position = 'relative';
-// 	title.style.left = '375px';
-// 	title.style.top = '70px';
-// 	title.style.color = 'white';
-// }
+function jailTwo(){
+	console.log("Scene 1a 'Jail'");
+	img.src = "images/jail2.jpg";
+	img.style.height = "557px";
+	p.innerHTML = "You look around.";
+	button1.removeEventListener('click', jailTwo);
+	button1.addEventListener('click', jailThree);
+}
+
+function jailThree(){
+	console.log("Scene 1b 'Jail'");
+	img.src = "images/jail3.png";
+	p.innerHTML = "Choice: Towards your left is a sewer which you could take a look at/Await whatever fate has in store for you."
+	button1.style.display = 'block';
+	button2.style.display = 'block';
+	button1.innerHTML = "Wait";
+	button2.innerHTML = "Sewer";
+	button1.removeEventListener('click', jailThree);
+	button1.addEventListener('click', wait);
+	button2.addEventListener('click', sewer);
+}
+
+function wait(){
+	console.log("Scene 1c 'Jail'");
+	img.src = "images/guard.png";
+	p.innerHTML = "You walk towards the cell door and a guard stands in front of you. “It is awake, Commander.” The guard shouted towards the Commander.";
+	button1.removeEventListener('click', wait);
+	button1.addEventListener('click', waitTwo);
+	button1.innerHTML = "Next";
+	button2.style.display = 'none';
+}
+
+function waitTwo(){
+	console.log("Scene 1 'Jail'");
+	img.src = "images/dialoguescreen.png";
+	p.innerHTML = "You get taken away by the guards.";
+	button1.removeEventListener('click', waitTwo);
+	button1.addEventListener('click', takenAway);
+}
+
+function takenAway(){
+	console.log("Scene 1 'Jail'");
+	p.innerHTML = "The guards blindfold you, you get pushed around.";
+	button1.removeEventListener('click', takenAway);
+	button1.addEventListener('click', executionBlock);
+}
+
+function executionBlock(){
+	console.log("Scene 2 'Outside'");
+	title.innerHTML = "Fiore (Outside)";
+	img.src = "images/execution.jpg";
+	p.innerHTML = "The blindfold gets taken off and you arrive at an execution block. You get put on an execution block and get executed. You are dead.";
+}
 
 gameName();
