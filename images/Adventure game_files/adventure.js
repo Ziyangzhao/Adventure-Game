@@ -1,6 +1,6 @@
 //Game var
 var title = document.getElementById("title");
-var instructionScreen = document.getElementById("instructionScreen");
+var instructionScreen = document.getElementById("button2");
 var gameContainer = document.getElementById('game-container');
 var gameButtons = document.getElementById('game-buttons');
 var description = document.getElementById('description'); 
@@ -33,25 +33,25 @@ function layOut(){
 	//button1
 	button1.style.display = 'block';
 	button1.style.position = 'relative';
-	button1.style.top = '460px';
+	button1.style.top = '471px';
 	button1.style.left = '840px';
-	button1.style.height = '60px';
+	button1.style.height = '50px';
 	button1.style.width = '150px';
 	button1.innerHTML = 'tekst';
 	//button2
 	button2.style.display = 'block';
 	button2.style.position = 'relative';
-	button2.style.top = '320px';
-	button2.style.left = '840px';
-	button2.style.height = '60px';
+	button2.style.top = '417px';
+	button2.style.left = '640px';
+	button2.style.height = '50px';
 	button2.style.width = '150px';
 	button2.innerHTML = 'tekst';
 	//button3
 	button3.style.display = 'block';
 	button3.style.position = 'relative';
-	button3.style.top = '180px';
-	button3.style.left = '840px';
-	button3.style.height = '60px';
+	button3.style.top = '363px';
+	button3.style.left = '435px';
+	button3.style.height = '50px';
 	button3.style.width = '150px';
 	button3.style.zIndex = '1';
 	button3.innerHTML = 'tekst';
@@ -132,7 +132,7 @@ function closeScreen(){
 }
 
 function instruction(){ 
-	//var instructionScreen = document.getElementById("instructionScreen");
+	var instructionScreen = document.getElementById("instructionScreen");
 	if(!instructionScreen){
 		instructionScreen = document.createElement("div");
 	}
@@ -170,7 +170,7 @@ function instruction(){
 	console.log("Instruction Screen");
 }
 
-//Scene 1 Jail
+//Scene1
 function jail(){
 	console.log("Scene 1 'Jail'");
 	layOut();
@@ -207,7 +207,7 @@ function jailTwo(){
 function jailThree(){
 	console.log("Scene 1b 'Jail'");
 	img.src = "images/jail3.png";
-	p.innerHTML = "[Choice:] Towards your left is a sewer which you could take a look at/<br> Await whatever fate has in store for you."
+	p.innerHTML = "Choice: Towards your left is a sewer which you could take a look at/Await whatever fate has in store for you."
 	button1.style.display = 'block';
 	button2.style.display = 'block';
 	button1.innerHTML = "Wait";
@@ -216,7 +216,7 @@ function jailThree(){
 	button1.addEventListener('click', wait);
 	button2.addEventListener('click', sewer);
 }
-//Scene 1 Jail (wait)
+
 function wait(){
 	console.log("Scene 1c 'Jail'");
 	img.src = "images/guard.png";
@@ -228,7 +228,7 @@ function wait(){
 }
 
 function waitTwo(){
-	console.log("Scene 1d 'Jail'");
+	console.log("Scene 1 'Jail'");
 	img.src = "images/takenaway.png";
 	p.innerHTML = "You get taken away by the guards.";
 	button1.removeEventListener('click', waitTwo);
@@ -236,7 +236,7 @@ function waitTwo(){
 }
 
 function takenAway(){
-	console.log("Scene 1e'Jail'");
+	console.log("Scene 1 'Jail'");
 	img.src = "images/dialoguescreen.png";
 	p.innerHTML = "The guards blindfold you, you get pushed around.";
 	button1.removeEventListener('click', takenAway);
@@ -244,7 +244,7 @@ function takenAway(){
 }
 
 function executionBlock(){
-	console.log("'Dead'");
+	console.log("Scene 3 'Outside'");
 	title.innerHTML = "Fiore (Outside)";
 	img.src = "images/execution.jpg";
 	p.innerHTML = "The blindfold gets taken off and you arrive at an execution block. You get put on an execution block and get executed. You are dead.";
@@ -252,149 +252,18 @@ function executionBlock(){
 	button1.removeEventListener('click', executionBlock);
 	button1.addEventListener('click', gameName);
 }
-//Scene 1 Jail (sewer)
+
 function sewer(){
 	console.log("Scene 2 'Sewer'");
 	title.innerHTML = "Sewer";
 	img.src = "images/Sewer1.png";
-	p.innerHTML = "You take a closer look at the ledge. It seems loose. You attempt to open it.";
-	button1.innerHTML = "Open ledge";
-	button2.style.display = 'none';
-	button3.style.zIndex = '0';
+	p.innerHTML = "You take a closer look at the sewer gate. It seems loose. You attempt to open it.";
+	button1.innerHTML = "Next";
 	instructionScreen.style.display = 'none';
 	button1.removeEventListener('click', sewer);
 	button1.addEventListener('click', sewer2);
+	button2.removeEventListener('click', sewer);
+	button3.removeEventListener('click', sewer);;
 }
-
-function sewer2(){
-	console.log("Scene 2a 'Sewer'");
-	img.src = "images/openledge.png";
-	p.innerHTML = "It's open! “I’ve got to get out of here before the guards come.”";
-	button1.innerHTML = "Squeeze through";
-	button1.removeEventListener('click', sewer2);
-	button1.addEventListener('click', sewer3);
-}
-//Scene 2 Sewer (escape)
-function sewer3(){
-	console.log("Scene 2b 'Sewer'");
-	img.src = "images/sewer2.jpg";
-	p.innerHTML = "You jumped through and are now in a sewer.“Ugh, it smells awfull in <br> here. Well, I'm in a sewer after all.”";
-	button1.innerHTML = "Next";
-	button1.removeEventListener('click', sewer3);
-	button1.addEventListener('click', sewer4);
-}
-
-function sewer4(){
-	console.log("Scene 2c 'Sewer'");
-	img.src = "images/sewer3.jpg";
-	var lever = document.createElement("img");
-	lever.id = "lever";
-	lever.src = "images/lever.png";
-	lever.style.position = 'absolute';
-    lever.style.top = '34%';
-    lever.style.right = '32%';
-	document.getElementById("game-container").appendChild(lever);
-	p.innerHTML = "You look around the area. “Perhaps there might be a way to open that <br> door?” (Click on something that could open the door)";
-	button1.style.display = 'none';
-	button1.removeEventListener('click', sewer4);
-	lever.addEventListener('click', sewer5);
-}
-
-function sewer5(){
-	console.log("Scene 2d 'Sewer'");
-	img.src = "images/dialoguescreen.png";
-	p.innerHTML = "The gate has opened.";
-	lever.style.display = 'none';
-	button1.style.display = 'block';
-	button1.innerHTML = 'Next';
-	lever.removeEventListener('click', sewer5);
-	button1.addEventListener('click', sewer6);
-	// document.getElementById("game-container").removeChild(lever);
-	// lever.remove
-}
-
-function sewer6(){
-	console.log("Scene 2e 'Sewer'");
-	img.src = "images/sewerlight.png";
-	title.innerHTML = 'Sewer';
-	p.innerHTML = "You walk towards the light..";
-	button1.innerHTML = 'Next';
-	button1.removeEventListener('click', sewer6);
-	button1.removeEventListener('click', gameName);
-	button1.addEventListener('click', outside);
-}
-//Scene 3 Outside (escaped)
-function outside(){
-	console.log("Scene 3 'Outside'");
-	img.src = "images/outside.png";
-	title.innerHTML = 'Fiore (Outside)';
-	title.style.left = '435px';
-	p.innerHTML = "You have succesfully escaped.";
-	button1.innerHTML = "Next";
-	button3.style.display = 'none';
-	button1.removeEventListener('click', outside);
-	button1.addEventListener('click', outside2);
-}
-
-function outside2(){
-	console.log("Scene 3a 'Outside'");
-	p.innerHTML = "The sun is slowly setting. [Choice:] You see a small village just a little <br> further up ahead. You could visit there but people might recognize your <br> wanted face/You take another path but you don't know where it may lead <br> you."
-	button1.innerHTML = "Village";
-	button2.addEventListener('click', otherPath);
-	button2.style.display = 'block';
-	button2.innerHTML = "Other path";
-	button1.removeEventListener('click', outside2);
-	// button1.addEventListener('click', village);
-}
-//Scene 4 Strange path (otherPath)
-function otherPath(){
-	console.log("Scene 3b 'Outside'");
-	img.src = "images/otherPath.png";
-	title.innnerHTML = 'Fiore (Outside)';
-	p.innerHTML = "You take the other path just to make sure no one would see you've escaped out of jail.";
-	button1.innerHTML = 'Next';
-	button1.removeEventListener('click', otherPath);
-	button1.addEventListener('click', bear);
-	button2.style.display = 'none'; 
-}
-
-function bear(){
-	console.log("Scene 3c 'Bear Encounter'");
-	img.src = "images/bear.png";
-	title.innerHTML = 'Strange Path';
-	title.style.left = '430px';
-	p.innerHTML = "You stumble upon a bear. [Choice:] Attack the bear/Run away from the <br> bear.";
-	button1.innerHTML = 'Attack';
-	button2.style.display = 'block';
-	button2.innerHTML = 'Run';
-	button1.removeEventListener('click', bear);
-	button1.addEventListener('click', attackBear);
-	button2.removeEventListener('click', otherPath);
-	button2.addEventListener('click', run);
-}
-
-function attackBear(){
-	console.log("Scene 3d 'Bear Attack'");
-	img.src = "images/attackBear.png";
-	p.innerHTML = "You hit the bear with your fist on it's head. The bear seems to get furious. The bear tore your shoulder apart from your body.";
-	button2.style.display = 'none';
-	button1.removeEventListener('click', attackBear);
-	button1.addEventListener('click', attackBear2);
-}
-
-function attackBear2(){
-	console.log("Scene 3e 'Bear Attack'");
-	title.style.zIndex = '5';
-	img.style.zIndex = '4';
-	img.src = "images/bearAttack2.jpg";
-	p.innerHTML = "You bleed out slowly... Untill you're dead. You're dead.";
-	button1.removeEventListener('click', attackBear2);
-	button1.addEventListener('click', gameName);
-	button2.style.display = 'none';
-	//NOG EEN RETURN KNOP MAKEN OM TERUG TE KUNNEN GAAN NAAR HET MAIN MENU!!!!!!!!
-}
-
 
 gameName();
-
-

@@ -23,7 +23,7 @@ body{
 }
 
 #button1{
-    background-color: #000000;
+    background-color: #A9A9A9;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -34,11 +34,10 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border: solid black 2px;
-    border-color: #FF0000;
 }
 
 #button2{
-    background-color: #000000;
+    background-color: #A9A9A9;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -49,11 +48,10 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border: solid black 2px;
-    border-color: #FF0000;
 }
 
 #button3{
-    background-color: #000000;
+    background-color: #A9A9A9;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -64,5 +62,4 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border: solid black 2px;
-    border-color: #FF0000;
 }
