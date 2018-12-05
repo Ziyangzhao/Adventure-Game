@@ -170,6 +170,8 @@ function instruction(){
 	console.log("Instruction Screen");
 }
 
+
+
 //Scene 1 Jail
 function jail(){
 	console.log("Scene 1 'Jail'");
@@ -216,6 +218,9 @@ function jailThree(){
 	button1.addEventListener('click', wait);
 	button2.addEventListener('click', sewer);
 }
+
+
+
 //Scene 1 Jail (wait)
 function wait(){
 	console.log("Scene 1c 'Jail'");
@@ -243,6 +248,10 @@ function takenAway(){
 	button1.addEventListener('click', executionBlock);
 }
 
+function refresh(){
+	window.location = window.location; //Refresh
+}
+
 function executionBlock(){
 	console.log("'Dead'");
 	title.innerHTML = "Fiore (Outside)";
@@ -250,8 +259,12 @@ function executionBlock(){
 	p.innerHTML = "The blindfold gets taken off and you arrive at an execution block. You get put on an execution block and get executed. You are dead.";
 	button1.innerHTML = "Return to Menu";
 	button1.removeEventListener('click', executionBlock);
-	button1.addEventListener('click', gameName);
+	button1.addEventListener('click', refresh);
 }
+
+
+
+
 //Scene 1 Jail (sewer)
 function sewer(){
 	console.log("Scene 2 'Sewer'");
@@ -274,6 +287,8 @@ function sewer2(){
 	button1.removeEventListener('click', sewer2);
 	button1.addEventListener('click', sewer3);
 }
+
+
 //Scene 2 Sewer (escape)
 function sewer3(){
 	console.log("Scene 2b 'Sewer'");
@@ -309,8 +324,6 @@ function sewer5(){
 	button1.innerHTML = 'Next';
 	lever.removeEventListener('click', sewer5);
 	button1.addEventListener('click', sewer6);
-	// document.getElementById("game-container").removeChild(lever);
-	// lever.remove
 }
 
 function sewer6(){
@@ -321,8 +334,11 @@ function sewer6(){
 	button1.innerHTML = 'Next';
 	button1.removeEventListener('click', sewer6);
 	button1.removeEventListener('click', gameName);
+	button1.removeEventListener('click', refresh);
 	button1.addEventListener('click', outside);
 }
+
+
 //Scene 3 Outside (escaped)
 function outside(){
 	console.log("Scene 3 'Outside'");
@@ -333,6 +349,7 @@ function outside(){
 	button1.innerHTML = "Next";
 	button3.style.display = 'none';
 	button1.removeEventListener('click', outside);
+	button1.removeEventListener('click', executionBlock);
 	button1.addEventListener('click', outside2);
 }
 
@@ -340,12 +357,13 @@ function outside2(){
 	console.log("Scene 3a 'Outside'");
 	p.innerHTML = "The sun is slowly setting. [Choice:] You see a small village just a little <br> further up ahead. You could visit there but people might recognize your <br> wanted face/You take another path but you don't know where it may lead <br> you."
 	button1.innerHTML = "Village";
-	button2.addEventListener('click', otherPath);
 	button2.style.display = 'block';
 	button2.innerHTML = "Other path";
 	button1.removeEventListener('click', outside2);
-	// button1.addEventListener('click', village);
+	button1.addEventListener('click', bridge);
+	button2.addEventListener('click', otherPath);
 }
+
 //Scene 4 Strange path (otherPath)
 function otherPath(){
 	console.log("Scene 3b 'Outside'");
@@ -389,11 +407,68 @@ function attackBear2(){
 	img.src = "images/bearAttack2.jpg";
 	p.innerHTML = "You bleed out slowly... Untill you're dead. You're dead.";
 	button1.removeEventListener('click', attackBear2);
-	button1.addEventListener('click', gameName);
+	button1.addEventListener('click', function(){
+		console.log("Test2");
+		// window.location = window.location;
+	});
 	button2.style.display = 'none';
 	//NOG EEN RETURN KNOP MAKEN OM TERUG TE KUNNEN GAAN NAAR HET MAIN MENU!!!!!!!!
 }
 
+function run(){
+	console.log("Scene 3e 'Bear Escape'");
+	img.src = "images/bearEscape.jpg";
+	p.innerHTML = "You try to run away from the bear but it seems to be faster than you are. It catches up and tears your torse apart. You're dead.";
+	button1.innerHTML = "Return to menu";
+	//NOG EEN RETURN KNOP MAKEN OM TERUG TE KUNNEN GAAN NAAR HET MAIN MENU!!!!!!!!
+}
+
+function bridge(){
+	console.log("Scene 4 'Bridge'");
+	img.src = "images/bridge.png";
+	p.innerHTML = "You are crossing the bridge and a guard walks towards you. “What brings <br> you here, stranger?” (The guard doesn't seem to recognize you.)";
+	button1.innerHTML = "Passing by";
+	button2.style.display = 'none';
+	button1.removeEventListener('click', bridge);
+	button1.addEventListener('click', bridge2);
+}
+
+function bridge2(){
+	console.log("Scene 4a 'Bridge'");
+	img.src = "images/guard2.png";
+	p.innerHTML = "“Alright, I shall take your word. I hope you won't cause any trouble along <br> the way, stranger. Or else you'll have to go to jail, depending on what <br> you do of course.”";
+	button1.innerHTML = "Thank you.";
+	button1.removeEventListener('click', bridge2);
+	button1.addEventListener('click', bridge3);
+}
+	
+function bridge3(){
+	console.log("Scene 4b 'Bridge'");
+	img.src = "images/farewell.png";
+	p.innerHTML = "The guard returns to guard duty for the village. You are entering the city.";
+	button1.innerHTML = "Enter Village";
+	button1.removeEventListener('click', bridge3);
+	button1.addEventListener('click', village);
+}
+
+
+
+//Scene 5 Village
+function village(){
+	console.log("Scene 5 'Village'");
+	title.innerHTML = "Hateno Village";
+	img.src = "images/village.jpg";
+	p.innerHTML = "You've entered the village of Fiore, Hateno Village.";
+}
+
+function village2(){
+	console.log("Scene 5a 'Village'");
+	title.innerHTML = "Hateno Village";
+	img.src = " "// Voorkant van winkel SS maken
+	p.innerHTML = "You enter a store to see if you can get anything you might need later on.";
+	button1.removeEventListener('click', village2);
+	button1.addEventListener('click', store);
+}
 
 gameName();
 
