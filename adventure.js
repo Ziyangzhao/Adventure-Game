@@ -13,14 +13,24 @@ var p = document.createElement("p");
 p.id = 'text';
 
 
-//Items var
-//var bow = document.createElement
+//Items 
+var items = [];
+var bow = document.createElement('img');
+
 
 //Refresh
 function refresh(){
 	window.location = window.location; //Refresh
 }
 
+function pickItem(item) {
+
+	if(items.indexOf(item) === -1) {
+		items.push(item);
+	}else {
+		alert("ïtem already in inventory");
+	}
+}
 
 // Lay Out
 function layOut(){
@@ -278,6 +288,7 @@ function sewer(){
 	instructionScreen.style.display = 'none';
 	button1.removeEventListener('click', sewer);
 	button1.addEventListener('click', sewer2);
+	// button2.removeEventListener('click', sewer);
 }
 
 function sewer2(){
@@ -378,6 +389,7 @@ function otherPath(){
 	button1.innerHTML = 'Next';
 	button1.removeEventListener('click', otherPath);
 	button1.addEventListener('click', bear);
+	// button2.removeEventListener('click', otherPath);
 	button2.style.display = 'none'; 
 }
 
@@ -392,7 +404,7 @@ function bear(){
 	button2.innerHTML = 'Run';
 	button1.removeEventListener('click', bear);
 	button1.addEventListener('click', attackBear);
-	button2.removeEventListener('click', otherPath);
+	// button2.removeEventListener('click', otherPath);
 	button2.addEventListener('click', run);
 }
 
@@ -426,6 +438,7 @@ function run(){
 	p.innerHTML = "You try to run away from the bear but it seems to be faster than you are. It catches up and tears your torse apart. You're dead.";
 	button1.innerHTML = "Return to menu";
 	button1.removeEventListener('click', run);
+	button2.removeEventListener('click', run);
 	button1.addEventListener('click', refresh);
 }
 
@@ -437,6 +450,7 @@ function bridge(){
 	button2.style.display = 'none';
 	button1.removeEventListener('click', bridge);
 	button1.addEventListener('click', bridge2);
+	button2.removeEventListener('click', bridge);
 }
 
 function bridge2(){
@@ -473,7 +487,7 @@ function village(){
 function village2(){
 	console.log("Scene 5a 'Village'");
 	title.innerHTML = "Hateno Village";
-	img.src = "images/merchantStore.jpg";// Voorkant van winkel SS maken
+	img.src = "images/storeHouse.png";// Voorkant van winkel SS maken
 	p.innerHTML = "You enter a store to see if you can get anything you might need later on.";
 	button1.innerHTML = "Enter store";
 	button1.removeEventListener('click', village2);
@@ -482,11 +496,119 @@ function village2(){
 
 function store(){
 	console.log("Scene 6 'Store'");
-	img.src = "images/Merchant.jpg";
-	p.innerHTML = "[Merchant]“Welcome to our store. I don't think I've seen your face before <br> eh? You new here?”"
+	img.src = "images/storeEntrance.png"; 
+	title.innerHTML = "Store";
+	p.innerHTML = "You enter a store.";
+	button1.innerHTML = "Next";
 	button1.removeEventListener('click', store);
-
+	button1.addEventListener('click', store2);
 }
+
+function store2(){
+	console.log("Scene 6a 'Store'");
+	img.src = "images/Merchant.png";
+	p.innerHTML = "[Merchant]“Welcome to our store. I don't think I've seen your face before <br> eh? You new here?” Well, take a look it doesn't matter who you are.";
+	button1.innerHTML = "Thanks";
+	button1.removeEventListener('click', store2);
+	button1.addEventListener('click', store3);
+} 
+
+function store3(){
+	console.log("Scene 6b 'Store'");
+	p.innerHTML = "You look at the items. (click on anything that you want to know the price of)";
+	button1.style.display = 'none';
+	img.addEventListener('click', stranger);
+	button1.removeEventListener('click', store3);
+}
+
+function stranger(){
+	console.log("Scene 6c 'Store'");
+	p.innerHTML = "Before you wanted to ask the merchant the price of <br> that item, someone calls you. “Hey, stranger! Come here.”";
+	button1.style.display = 'block';
+	button1.innerHTML = "Turn around";
+	img.removeEventListener('click', stranger);
+	button1.addEventListener('click', stranger1);
+}
+
+function stranger1(){
+	console.log("Scene 6d 'Store'");
+	img.src = "images/stranger.png";
+	p.innerHTML = "Come closer, traveler.";
+	button1.innerHTML = "Next";
+	button1.removeEventListener('click', stranger1);
+	button1.addEventListener('click', stranger2);
+}
+
+function stranger2 (){
+	console.log (" ");
+	img.src = "images/stranger2.png";
+	button1.removeEventListener('click', stranger2);
+	p.innerHTML = "“I sense something unique about you. You have the power of a <br> 'Dragonborn'. I just know it. You have to hurry and get to 'High Hrothgar' <br> and meet 'The Greybeards'. We've been waiting for a dragonborn <br> like you for the longest time.”";
+	button1.addEventListener('click', stranger3);
+}
+
+function stranger3 (){
+	console.log (" ");
+	button1.removeEventListener('click', stranger3);
+	p.innerHTML = "The stranger gives you an enchanted strong bow.";
+	button1.style.display = 'none';
+	bow.id = 'bow';
+	bow.src = "images/strongBow.png";
+	document.getElementById("game-container").appendChild(bow);
+	bow.style.position = 'absolute';
+	bow.style.top = '180px';
+	bow.style.left = '250px';
+	bow.style.zIndex = '50';
+	bow.style.width = '250px'; 
+	bow.style.height = '300px';
+	bow.addEventListener('click', stranger4);
+	bow.myParam = "bow";
+}
+
+function stranger4 (item){
+	// console.dir(item);
+	// console.table(items);
+	bow.id = 'bow';
+	bow.src = "images/strongBow.png";
+	document.getElementById("game-container").appendChild(bow);
+	bow.style.position = 'absolute';
+	bow.style.top = '620px';
+	bow.style.left = '750px';
+	bow.style.zIndex = '50';
+	bow.style.width = '50px'; 
+	bow.style.height = '50px';
+	bow.removeEventListener('click', stranger4);
+	bow.myParam = "bow";
+	pickItem(item.target.myParam);
+}
+
+// [Choice}Yes, I'm just passing by/No, I've lived here all my life.";
+// 	button1.innerHTML = "Lie";
+// 	button2.innerHTML = "Passing by";
+// 	button2.style.display = "block";
+// 	button1.removeEventListener('click', store2);
+// 	button2.removeEventListener('click', store2);
+// 	button1.addEventListener('click', speech);
+// 	button2.addEventListener('click', speech1);
+// }
+
+// function speech(){
+// 	console.log("Scene 6b 'Store'");
+// 	img.src = "images/Merchant.png";
+// 	p.innerHTML = "[Merchant] “Well, that's strange. I've never seen you here before. Oh well, we've got new items in stock. Take a look my friend."
+// 	button1.innerHTML = "Show me";
+// 	button2.style.display = "none";
+// 	button1.removeEventListener('click', speech);
+// }
+
+// function speech1(){
+// 	console.log("Scene 6b 'Store'");
+// 	p.innerHTML = "I see, I welcome you to the best store in all of Fiore! Here, take a look at all of our stuff!"
+// 	button1.innerHTML = "Great, thanks";
+// 	button2.style.display = 'none';
+// 	button1.removeEventListener('click', speech1);
+// 	button2.removeEventListener('click', speech1);
+
 
 gameName();
 
