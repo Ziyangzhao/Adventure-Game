@@ -389,6 +389,8 @@ function otherPath(){
 	button1.innerHTML = 'Next';
 	button1.removeEventListener('click', otherPath);
 	button1.addEventListener('click', bear);
+	button3.style.display = 'none';
+	instructionScreen.style.display = 'none';
 	// button2.removeEventListener('click', otherPath);
 	button2.style.display = 'none'; 
 }
@@ -540,7 +542,7 @@ function stranger1(){
 }
 
 function stranger2(){
-	console.log(" ");
+	console.log("Scene 6e 'Store'");
 	img.src = "images/stranger2.png";
 	button1.removeEventListener('click', stranger2);
 	p.innerHTML = "“I sense something unique about you. You have the power of a <br> 'Dragonborn'. I just know it. You have to hurry and get to 'High Hrothgar' <br> and meet 'The Greybeards'. We've been waiting for a dragonborn <br> like you for the longest time.”";
@@ -548,7 +550,7 @@ function stranger2(){
 }
 
 function stranger3(){
-	console.log(" ");
+	console.log("Scene 6f 'Store'");
 	button1.removeEventListener('click', stranger3);
 	p.innerHTML = "The stranger gives you an enchanted strong bow.";
 	button1.style.display = 'none';
@@ -568,7 +570,7 @@ function stranger3(){
 function stranger4(item){
 	// console.dir(item);
 	// console.table(items);
-	console.log(" ");
+	console.log("Scene 6g 'Store'");
 	bow.id = 'bow';
 	bow.src = "images/strongBow.png";
 	document.getElementById("game-container").appendChild(bow);
@@ -589,7 +591,7 @@ function stranger4(item){
 }
 
 function exit(){
-	console.log("Scene 7 'Outside'");
+	console.log("Scene 7a 'Outside'");
 	button1.removeEventListener('click', exit);
 	title.innerHTML = "Outside";
 	img.src = "images/theGreybeardQuest.png";
@@ -598,7 +600,7 @@ function exit(){
 }
 
 function highHrothgar(){
-	console.log("Scene 7 'Outside'");
+	console.log("Scene 7b 'Outside'");
 	button1.removeEventListener('click', highHrothgar);
 	img.src = "images/highHrothgar1.png";
 	p.innerHTML = "You're on your way.";
@@ -606,7 +608,7 @@ function highHrothgar(){
 }
 
 function highHrothgar1(){
-	console.log("");
+	console.log("Scene 7c 'Outside'");
 	button1.removeEventListener('click', highHrothgar1);
 	img.src = "images/highHrothgar2.png";
 	p.innerHTML = "You stumble upon two villagers.";
@@ -614,7 +616,7 @@ function highHrothgar1(){
 }
 
 function highHrothgar2(){
-	console.log(" ");
+	console.log("Scene 7d 'Outside'");
 	button1.removeEventListener('click', highHrothgar2);
 	img.src = "images/highHrothgar3.png"
 	p.innerHTML = "They look at you surprised. “You're not trying to climb the '7.000 Steps Mountain' are you?...”";
@@ -623,7 +625,7 @@ function highHrothgar2(){
 }
 
 function highHrothgar3(){
-	console.log(" ");
+	console.log("Scene 7e 'Outside'");
 	button1.removeEventListener('click', highHrothgar3);
 	p.innerHTML = "“Well, to each their own I guess.” You continue forward.";
 	button1.innerHTML = "Next";
@@ -631,7 +633,7 @@ function highHrothgar3(){
 }
 
 function highHrothgar4(){
-	console.log(" ");
+	console.log("Scene 8a '7.000 Steps Mountain'");
 	title.innerHTML = "The 7.000 Steps Mountain";
 	title.style.position = 'relative';
 	title.style.left = '410px';
@@ -643,16 +645,16 @@ function highHrothgar4(){
 }
 
 function highHrothgar5(){
-	console.log(" ");
+	console.log("Scene 8b '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar5);
 	img.src = "images/highHrothgar5.png";
-	p.innerHTML = " And so your quest to The Greybeards have begun.";
+	p.innerHTML = " And so your quest to The Greybeards has begun.";
 	button1.innerHTML = "Continue";
 	button1.addEventListener('click', highHrothgar6);
 }
 
 function highHrothgar6(){
-	console.log(" ");
+	console.log("Scene 8c '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar6);
 	img.src = "images/highHrothgar6.png";
 	p.innerHTML = "You walk up the stairs. You hear something growling nearby.";
@@ -661,7 +663,7 @@ function highHrothgar6(){
 }
 
 function highHrothgar7(){
-	console.log(" ");
+	console.log("Scene 8d '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar7 );
 	img.src = "images/highHrothgar7.png";
 	p.innerHTML = "A monster has jumped in front of you! “I'll die if I try fighting that with my hands!”";
@@ -670,7 +672,7 @@ function highHrothgar7(){
 }
 
 function highHrothgar8(){
-	console.log(" ");
+	console.log("Scene 8e '7.000 Steps Mountain'");
 	bow.removeEventListener('click', highHrothgar8);
 	img.src = "images/highHrothgar8.png";
 	p.innerHTML = "You use your enchanted bow to put a few arrows in it's head.";
@@ -680,7 +682,7 @@ function highHrothgar8(){
 }
 
 function highHrothgar9(){
-	console.log(" ");
+	console.log("Scene 8f '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar9);
 	img.src = "images/highHrothgar9.png";
 	p.innerHTML = "You get closer to retrieve your arrows and to make sure it's dead. “It's dead. Thank god.”";
@@ -689,7 +691,7 @@ function highHrothgar9(){
 }
 
 function highHrothgar10(){
-	console.log(" ");
+	console.log("Scene 8g '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar10);
 	img.src = "images/highHrothgar10.png";
 	p.innerHTML = "You continue your way up... It's starting to snow.";
@@ -698,7 +700,7 @@ function highHrothgar10(){
 }
 
 function highHrothgar11(){
-	console.log(" ");
+	console.log("Scene 8h '7.000 Steps Mountain'");
 	button1.removeEventListener('click', highHrothgar11);
 	img.src = "images/highHrothgar11.png";
 	p.innerHTML = "After 3 hours of walking and climbing, you finally arrive at the temple of High Hrothgar.";
@@ -707,7 +709,7 @@ function highHrothgar11(){
 }
 
 function greybeards(){
-	console.log(" ");
+	console.log("Scene 9a 'High Hrothgar");
 	button1.removeEventListener('click', greybeards);
 	title.innerHTML = "High Hrothgar";
 	img.src = "images/greybeards.png";
@@ -717,7 +719,7 @@ function greybeards(){
 }
 
 function greybeards1(){
-	console.log(" ");
+	console.log("Scene 9b 'High Hrothgar'");
 	button1.removeEventListener('click', greybeards1);
 	p.innerHTML = "That does not matter right now. What matters is that an Elder Dragon <br> is on it's way to the capital. You're the only one who can stop it. <br> You're a 'Dragonborn. Take this power that shall kill the dragon <br> once it's weak and you  will absorb all it's knowledge and powers.";
 	button1.innerHTML = "...Okay";
@@ -725,7 +727,7 @@ function greybeards1(){
 }
 
 function fusRoDah(){
-	console.log(" ");
+	console.log("Scene 9c 'High Hrothgar'");
 	button1.removeEventListener('click', fusRoDah);
 	img.src = "images/power.png";
 	p.innerHTML = "[You've received a shout 'Fus Ro Dah'] You feel powerfull. “Now go, Dragonborn! You've got a dragon to kill.”";
@@ -734,16 +736,18 @@ function fusRoDah(){
 }
 
 function returnVillage(){
-	console.log(" ");
+	console.log("Scene 10a 'Hateno Village'");
 	button1.removeEventListener('click',returnVillage);
+	title.innerHTML = 'Hateno Village';
 	img.src = "images/returnVillage.png";
 	p.innerHTML = "You've returned to the village. On your way to the king.";
 	button1.addEventListener('click', familiarPath);
 }
 
 function familiarPath(){
-	console.log(" ");
+	console.log("Scene 11a 'Fiore'");
 	button1.removeEventListener('click', familiarPath);
+	title.innerHTML = 'Fiore (Outside)'
 	img.src = "images/crossBridge.png";
 	p.innerHTML = "You cross the bridge, where you originally came from.";
 	button1.innerHTML = "Continue walking";
@@ -751,74 +755,198 @@ function familiarPath(){
 }
 
 function familiarPath2(){
-	console.log(" ");
+	console.log("Scene 11b 'Fiore'");
 	button1.removeEventListener('click', familiarPath2);
 	img.src = "images/path.png";
-	p.innerHTML = "You see something brown in front of you.";
+	p.innerHTML = "Something's near..";
 	button1.innerHTML = "Take a look";
 	button1.addEventListener('click', sleepBear);	
 }
 
 function sleepBear(){
-	console.log(" ");
+	console.log("Scene 11c 'Fiore'");
 	button1.removeEventListener('click', sleepBear);
 	img.src = "images/sleepBear.png";
-	p.innerHTML = "“It's a bear! I could kill it while it's still passive"
-	button1.innerHTML = "Kill it";
-	button2.style.display = "block";
-	button2.innerHTML = "Leave it";
-	button1.addEventListener('click', bowKillBear);	
-	button2.addEventListener('click', sneakBy);
-}
-
-function bowKillBear(){
-	console.log(" ");
-	button1.removeEventListener('click', bowKillBear);
-	img.src = "images/sleepBear"
+	p.innerHTML = "It's a bear. It's sound asleep though.";
 	button1.style.display = 'none';
-	button2.style.display = 'none';
-	bow.addEventListener('click', bowKillBear2);
+	bow.addEventListener('click', killBear);
 }
 
-function bowKillBear2(){
-	console.log(" ");
-	bow.removeEventListener('click', bowKillBear2);
-	img.src = "images/bowKillBear.png";
-	p.innerHTML = "You draw your bow...";
+function killBear(){
+	bow.removeEventListener('click', killBear);
+	console.log("Scene 11d 'Fiore'");
+	img.src = "images/sneakkill.png";
+	p.innerHTML = "You draw your bow... Shoot.";
+	button1.style.display = 'block';
 	button1.innerHTML = "Next";
-	button1.addEventListener('click', );	
+	button1.style.zIndex = '55';
+	button1.addEventListener('click', retrieveArrow);
 }
 
-function sneakBy(){
-	console.log(" ");
-	// button1.removeEventListener('click', );
-	img.src = "images/dialoguescreen.png";
-	p.innerHTML = "You sneak by and continue on your way to the king.";
-	instructionScreen.style.display = 'none';
-	button3.style.display = 'none';
-	button1.innerHTML = "Go to Whiterun";
+function retrieveArrow(){
+	console.log("Scene 11e 'Fiore'");
+	button1.removeEventListener('click', retrieveArrow);
+	img.src = "images/bowKillBear2.png";
+	p.innerHTML = "You collect your arrows and head to the capital.";
+	// button1.innerHTML = " ";
 	button1.addEventListener('click', whiterun);
-	button2.style.display = 'none';	
 }
 
 function whiterun(){
-	console.log(" ");
-	button1.removeEventListener('click', );
-	img.src = "images/";
-	p.innerHTML = " ";
-	button1.innerHTML = " ";
-	button1.addEventListener('click', );	
+	console.log("Scene 12a 'Whiterun'");
+	button1.removeEventListener('click', whiterun);
+	img.src = "images/whiterun.png";
+	p.innerHTML = "You arrive at the capital, Whiterun.";
+	button1.style.display = 'block';
+	button1.innerHTML = "Next";
+	button2.style.display = 'none';
+	button1.addEventListener('click', whiterun2);	
 }
 
+function whiterun2(){
+	console.log("Scene 12b 'Whiterun'");
+	button1.removeEventListener('click', whiterun2);
+	img.src = "images/whiterun2.png";
+	p.innerHTML = "You have entered the capital.";
+	button1.innerHTML = "Next";
+	button1.addEventListener('click', whiterun3);
+}
 
-// 	console.log(" ");
-// 	button1.removeEventListener('click', );
-// 	img.src = "images/";
-// 	p.innerHTML = " ";
-// 	button1.innerHTML = " ";
-// 	button1.addEventListener('click', );
+function whiterun3(){
+	console.log("Scene 12c 'Whiterun'");
+	button1.removeEventListener('click', whiterun3);
+	img.src = "images/whiterun3.png";
+	p.innerHTML = "You make your way towards the castle."; ///
+	button1.addEventListener('click', whiterun4);
+}
 
-// “ ”
+function whiterun4(){
+	console.log("Scene 12d 'Whiterun'");
+	button1.removeEventListener('click', whiterun4);
+	img.src = "images/whiterun4.png";
+	p.innerHTML = " ";
+	button1.addEventListener('click', whiterun5);
+}
+
+function whiterun5(){
+	console.log("Scene 12e 'Whiterun'");
+	button1.removeEventListener('click', whiterun5);
+	img.src = "images/whiterun5.png";
+	p.innerHTML = " ";
+	button1.addEventListener('click', dragonsreach);
+}
+
+function dragonsreach(){
+	console.log("Scene 13a 'Dragonsreach'");
+	button1.removeEventListener('click', dragonsreach);
+	img.src = "images/dragonsreach.png";
+	p.innerHTML = "You arrive at the door. Let's hope the king wants to hear me out.";
+	button1.innerHTML = "Next";
+	button1.addEventListener('click', dragonsreach1);
+}
+
+function dragonsreach1(){
+	console.log("Scene 13b 'Dragonsreach'");
+	button1.removeEventListener('click', dragonsreach1);
+	img.src = "images/dragonsreach1.png";
+	p.innerHTML = "You enter the castle of Whiterun.";
+	button1.innerHTML = "Next";
+	button1.addEventListener('click', dragonsreach2);
+}
+
+function dragonsreach2(){
+	console.log("Scene 13c 'Dragonsreach'");
+	button1.removeEventListener('click', dragonsreach2);
+	img.src = "images/king.png";
+	p.innerHTML = "[King Uther]“What is it that you want, stranger?” [You]“A dragon is on it's way towards Whiterun, an Elder dragon to be precise. It will destroy everything in it's way! The Greybeards have warned me and asked me to bring this message to you, my King.” [Guard] “A dragon has been spotted outside Whiterun, King!”";
+	button1.addEventListener('click', dragon);
+}
+
+function dragon(){
+	console.log("Scene 13d 'Dragonsreach'");
+	button1.removeEventListener('click', dragon);
+	img.src = "images/knight.png";
+	p.innerHTML = "[Knight] Quick, come with me!"
+	button1.addEventListener('click', dragon1);
+}
+
+function dragon1(){
+	console.log("Scene 13e 'Dragonsreach'");
+	button1.removeEventListener('click', dragon1);
+	img.src = "images/dialoguescreen.png";
+	p.innerHTML = "You go with the guards towards the dragon.";
+	button1.addEventListener('click', dragon2);	
+}
+
+function dragon2(){
+	console.log("Scene 14a 'Watchtower' ");
+	button1.removeEventListener('click', dragon2);
+	img.src = "images/dragonattack.png";
+	p.innerHTML = "The dragon is attacking the watchtower and a few guards.";
+	button1.addEventListener('click', dragon3);	
+}
+
+function dragon3(){
+	console.log("Scene 14b 'Watchtower' ");
+	button1.removeEventListener('click', dragon3);
+	img.src = "images/dragonattack1.png";
+	p.innerHTML = "You arrive at the battle.";
+	button1.addEventListener('click', dragon4);
+}
+
+function dragon4(){
+	console.log("Scene 14c 'Watchtower' ");
+	button1.removeEventListener('click', dragon4);
+	img.src = "images/dragonattack2.png";
+	p.innerHTML = "What should I do?";
+	button1.style.display = 'none';
+	bow.addEventListener('click', dragon5);
+}
+
+function dragon5(){
+	console.log("Scene 14d 'Watchtower' ");
+	bow.removeEventListener('click', dragon5);
+	img.src = "images/dragonattack3.png";
+	p.innerHTML = "You draw your bow...";
+	button1.style.display = 'block';
+	//button1.innerHTML = " ";
+	button1.addEventListener('click', dragon6);
+}
+	
+function dragon6(){
+	console.log("Scene 14e 'Watchtower' ");
+	button1.removeEventListener('click', dragon6);
+	img.src = "images/dragonattack4.png";
+	p.innerHTML = "Critical hit! The arrows hit the dragon right in it's eyes. The enchanted bow made the arrows that has been shot poisonous which caused the dragon to collapse.";
+	button1.innerHTML = "Next";
+	button1.addEventListener('click', dragon7);
+}
+
+function dragon7(){
+	console.log("Scene 14f 'Watchtower' ");
+	button1.removeEventListener('click', dragon7);
+	img.src = "images/dragonattack5.png";
+	p.innerHTML = "The dragon is dead. You absorb it's power and claim it's head and you went back to the king.";
+	button1.addEventListener('click', dragon8);	
+}
+
+function dragon8(){
+	console.log("Scene 14g 'Watchtower' ");
+	button1.removeEventListener('click', dragon8);
+	img.src = "images/dragonattack6.png";
+	p.innerHTML = "The dragon's head has been skinned and put on the Castle's wall as decoration and in memory of your heroic deeds.";
+	button1.innerHTML = "Next";
+	button1.addEventListener('click', end);
+}
+
+function end(){
+	console.log("Scene 15 'End' ");
+	button1.removeEventListener('click', end);
+	img.src = "images/end.png";
+	p.innerHTML = "You saved Whiterun and it's people.";
+	button1.innerHTML = "Return to main menu";
+	button1.addEventListener('click', refresh);
+}
 
 gameName();
 
